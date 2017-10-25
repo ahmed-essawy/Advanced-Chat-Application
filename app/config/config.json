@@ -1,0 +1,15 @@
+{
+	"db": {
+		"username": "essawy",
+		"password": "essawy",
+		"host": "ds040637.mlab.com",
+		"port": "40637",
+		"name": "l3ijtkwijt-test"
+	},
+	"sessionSecret": "Ahmed Essawy <ahm.elessawy@gmail.com>",
+	"redis": {
+		"host": "pub-redis-14177.us-east-1.1.azure.garantiadata.com",
+		"port": 14177,
+		"password": ""
+	}
+}

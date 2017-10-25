@@ -1,0 +1,1445 @@
+/* Custom scroll bar */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+::-webkit-scrollbar-button {
+    width: 0px;
+    height: 0px;
+}
+::-webkit-scrollbar-thumb {
+    background: #fb294f;
+    border: 0px solid #ffffff;
+    border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #ac1234;
+}
+::-webkit-scrollbar-thumb:active {
+    background: #ac1234;
+}
+::-webkit-scrollbar-track {
+    background: #111111;
+    border: 0px none #ffffff;
+    border-radius: 0px;
+}
+::-webkit-scrollbar-track:hover {
+    background: #111111;
+}
+::-webkit-scrollbar-track:active {
+    background: #111111;
+}
+::-webkit-scrollbar-corner {
+    background: transparent;
+}
+
+*{
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	width:100%;
+	height:100%;
+	position: absolute;
+	font-family: Arial,Helvetica,sans-serif;
+}
+
+/* BIG CONTENT */
+#app {
+	display: inline-block;
+	float: left;
+	width: calc(100% - 450px);
+	height: 100%;
+}
+
+#top-bar {
+	height: 60px;
+	border-bottom: 3px solid #111111;
+	background: #1F1F1F;
+	color: #FFF;
+}
+
+#top-bar .logo {
+	margin-top: 9px;
+    margin-left: 20px;
+	height: 45px;
+	width: 123px;
+	border-right: 3px solid #d7294f;
+	cursor: pointer;
+	float: left;
+}
+
+#top-bar .logo img {
+	height: 35px;
+	width: 99px;
+	padding-top: 4px;
+	
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	-webkit-user-drag: none;
+	user-drag: none;
+	-webkit-touch-callout: none;
+}
+
+#top-bar .current-song {
+	float: left;
+	padding: 13px;
+}
+
+#top-bar .current-song .disc {
+	float: left;
+}
+
+#top-bar .current-song .disc img {
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	-webkit-user-drag: none;
+	user-drag: none;
+	-webkit-touch-callout: none;
+	height: 36px;
+	opacity: 0.5;
+}
+
+#top-bar .current-song .song-info {
+	float: left;
+	width: auto;
+	padding-left: 15px;
+	padding-top: 2px;
+}
+
+#top-bar .current-song .current-dj {
+	font-size: 14px;
+	color: #7b7b7b;
+}
+
+#top-bar .current-song .current-dj font {	
+	padding-left: 5px;
+	color:rgb(215,41,79);
+}
+
+#top-bar .history-button {
+    width: 52px;
+    height: 46px;
+    padding: 14px 0px 0px 20px;
+	float: right;
+	cursor: pointer;
+	background: #ac1234;
+}
+
+#top-bar .skip-button {
+	width: 52px;
+    height: 46px;
+    padding: 14px 0px 0px 20px;
+	float: right;
+	cursor: pointer;
+	background: #111111;
+}
+
+#top-bar #timeProgress {
+	width: 52px;
+	height: 46px;
+	padding: 21px 0px 0px 20px;
+	float: right;
+	font-size: 14px;
+	color: #7b7b7b;
+}
+
+#middle {
+	position: relative;
+	background: url('http://i.imgur.com/XUYO7wv.jpg');
+	height: calc(100% - 126px);
+	border-bottom: 3px solid #111111;
+}
+
+/* ROOM INFO PAGE */
+
+#middle #room-info {
+	display: none;
+	background-color: #212121;
+	opacity: 0.95;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+    z-index: 2;
+	color: #FFFFFF;
+}
+
+#middle #room-info #room-info-content{
+	padding: 50px;
+	overflow-y: auto;
+    height: calc(100% - 100px);
+}
+
+#middle #room-info #room-info-content .logo {
+	width:162px;
+}
+
+#middle #room-info #room-info-content #room-info-text {
+	width: 100%;
+	color: #b3b3b3;
+	border-bottom: 2px solid #b3b3b3;
+	padding-bottom: 20px;
+	padding-top: 15px;
+}
+
+#middle #room-info #room-info-content #social-links {
+	padding-top: 20px;
+}
+
+#middle #room-info #room-info-content #social-links a {
+	float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    color: #FFF;
+    border-radius: 5px;
+	margin-right: 15px;
+}
+
+#middle #room-info #room-info-content #social-links #discord-button {
+	background-color: #7289DA;
+	text-decoration: none;
+}
+
+#middle #room-info #room-info-content #social-links #discord-button:hover {
+	background-color: rgba(114, 137, 218, 0.8);
+}
+
+#middle #room-info #room-info-content #social-links #youtube-button {
+	background-color: #E62117;
+	text-decoration: none;
+}
+
+#middle #room-info #room-info-content #social-links #youtube-button:hover {
+	background-color: rgba(230, 33, 23, 0.8);
+}
+
+#middle #room-info #room-info-content #social-links #facebook-button {
+	background-color: #3B5998;
+	text-decoration: none;
+}
+
+#middle #room-info #room-info-content #social-links #facebook-button:hover {
+	background-color: rgba(59, 89, 152, 0.8)
+}
+
+#middle #room-info #room-info-content #social-links #soundcloud-button {
+	background-color: #FF6801;
+	text-decoration: none;
+}
+
+#middle #room-info #room-info-content #social-links #soundcloud-button:hover {
+	background-color: rgba(255, 104, 1, 0.8);
+}
+
+#middle #room-info #room-info-content #social-links .social-button {
+	position: relative;
+	top: -2px;
+	padding-left: 5px;
+}
+
+/* PLAYLISTS PAGE */
+
+#middle #playlists {
+	display: none;
+	background-color: #212121;
+	opacity: 0.95;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+    z-index: 2;
+	color: #FFFFFF;
+}
+
+#middle #playlists #playlists-content {
+	height: 100%;
+	width: 100%;
+}
+
+#middle #playlists #playlists-content #playlist-lists {
+	width: 250px;
+	height: 100%;
+	border-right: 3px solid #d7294f;
+	float: left;
+}
+
+#middle #playlists #playlists-content #playlist-lists #create-playlist {
+	border-bottom: 3px solid #cf274e;
+}
+
+#middle #playlists #playlists-content #playlist-lists #create-playlist #playlist-name-input {
+	height: 100%;
+	width: 80%;
+	background: none;
+	padding: 12px;
+	border: none;
+	color: #FFFFFF;
+	outline: 0;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+#middle #playlists #playlists-content #playlist-lists #create-playlist #create-playlist-button {
+	float: right;
+	background-color: #c4254a;
+	width: 47px;
+	height: 34px;
+	padding-top: 5px;
+	cursor: pointer;
+}
+
+#middle #playlists #playlists-content #playlist-lists .list {
+	height: 18px;
+	padding: 10px;
+}
+
+#middle #playlists #playlists-content #playlist-lists .list .playlistName {
+	float: left;
+	font-size: 15px;
+	font-weight: 700;
+}
+
+#middle #playlists #playlists-content #playlist-lists .list .amountItems {
+	float: right;
+	font-size: 12px;
+	color: #7b7b7b;
+	padding-top: 3px;
+}
+
+#middle #playlists #playlists-content #playlist-lists .list:hover {
+	background-color: rgba(215, 41, 79, 0.6);
+}
+
+#middle #playlists #playlists-content #playlist-lists .playlistlinks {
+	cursor: pointer;
+}
+
+/* PLAYLIST CONTENT => ALL ITEMS IN PLAYLISTS */
+#middle #playlists #playlists-content #playlist-items {
+	float: left;
+	width: calc(100% - 253px);
+	height: 100%;
+}
+
+#middle #playlists #playlists-content #playlist-items #playlist-items-content {
+	height: 100%;
+}
+
+#middle #playlists #playlists-content #playlist-items #playlist-items-content #youtube-search {
+	border-bottom: 3px solid #cf274e;
+}
+
+#middle #playlists #playlists-content #playlist-items #playlist-items-content #youtube-search #youtube-search-input {
+	height: 100%;
+	width: 91%;
+	background: none;
+	padding: 12px;
+	border: none;
+	color: #FFFFFF;
+	outline: 0;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+#middle #playlists #playlists-content #playlist-items #playlist-items-content #youtube-search #searchYouTubeButton {
+	float: right;
+	background-color: #c4254a;
+	width: 47px;
+	height: 34px;
+	padding-top: 7px;
+	cursor: pointer;
+}
+
+#middle #playlists #playlists-content #playlist-items #playlist-items-content #searchResult {
+	display: none;
+}
+
+#middle #playlists #playlists-content #playlist-items #playlist-items-content #searchResult #searchResultFoundItems {
+	height: calc(100% - 42px);
+	overflow-y: auto;
+}
+
+#middle #history #history-content .history-item,
+#middle #playlists #playlists-content #playlist-items #playlist-items-content #searchResult #searchResultFoundItems .found-playlist-item,
+#middle #playlists #playlists-content #playlist-items #playlist-items-content .playlist .currentPlaylistItemsBox .current-playlist-item {
+	height: 75px;
+	clear: both;
+}
+
+#middle #history #history-content .history-item .thumbnail,
+#middle #playlists #playlists-content #playlist-items #playlist-items-content #searchResult #searchResultFoundItems .found-playlist-item .thumbnail,
+#middle #playlists #playlists-content #playlist-items #playlist-items-content .playlist .currentPlaylistItemsBox .current-playlist-item .thumbnail {
+	float: left;
+	padding: 8px;
+}
+
+#middle #history #history-content .history-item img,
+#middle #playlists #playlists-content #playlist-items #playlist-items-content #searchResult #searchResultFoundItems .found-playlist-item .thumbnail img,
+#middle #playlists #playlists-content #playlist-items #playlist-items-content .playlist .currentPlaylistItemsBox .current-playlist-item .thumbnail img {
+	height:60px;
+}
+
+#middle #history #history-content .history-item .details,
+#middle #playlists #playlists-content #playlist-items #playlist-items-content #searchResult #searchResultFoundItems .found-playlist-item .details,
+#middle #playlists #playlists-content #playlist-items #playlist-items-content .playlist .currentPlaylistItemsBox .current-playlist-item .details {
+	float: left;
+	padding: 15px;
+}
+
+#middle #history #history-content .history-item .details .item-info,
+#middle #playlists #playlists-content #playlist-items #playlist-items-content #searchResult #searchResultFoundItems .found-playlist-item .details .item-info,
+#middle #playlists #playlists-content #playlist-items #playlist-items-content .playlist .currentPlaylistItemsBox .current-playlist-item .details .item-info {
+	font-size: 14px;
+	color: #7b7b7b;
+	margin-top: 8px;
+}
+
+#middle #history #history-content .history-item .votes,
+#middle #playlists #playlists-content #playlist-items #playlist-items-content #searchResult #searchResultFoundItems .found-playlist-item .actions,
+#middle #playlists #playlists-content #playlist-items #playlist-items-content .playlist .currentPlaylistItemsBox .current-playlist-item .actions {
+	float: right;
+	padding: 8px;
+}
+
+#middle #playlists #playlists-content #playlist-items #playlist-items-content #searchResult #searchResultFoundItems .found-playlist-item .actions .add-to-playlist,
+#middle #playlists #playlists-content #playlist-items #playlist-items-content .playlist .currentPlaylistItemsBox .current-playlist-item .actions .add-to-playlist,
+#middle #playlists #playlists-content #playlist-items #playlist-items-content .playlist .currentPlaylistItemsBox .current-playlist-item .actions .rename-song,
+#middle #playlists #playlists-content #playlist-items #playlist-items-content .playlist .currentPlaylistItemsBox .current-playlist-item .actions .remove-from-playlist {
+	float: left;
+	padding: 15px;
+	cursor: pointer;
+}
+
+#middle #playlists #playlists-content #playlist-items #playlist-items-content .playlistcontent {
+	height: 100%;
+	border-bottom: 0;
+}
+
+#middle #playlists #playlists-content #playlist-items #playlist-items-content .playlistcontent .currentPlaylistInfoBox {
+	border-bottom: 3px solid #cf274e;
+	width: 100%;
+	height: 39px;
+}
+
+#middle #playlists #playlists-content #playlist-items #playlist-items-content .playlistcontent .currentPlaylistInfoBox .currentPlaylistName {
+	padding: 8px;
+	float: left;
+	font-size: 19px;
+	font-weight: 700;
+}
+
+#middle #playlists #playlists-content #playlist-items #playlist-items-content .playlistcontent .currentPlaylistInfoBox .actions {
+	float: right;
+}
+
+#middle #playlists #playlists-content #playlist-items #playlist-items-content .playlistcontent .currentPlaylistInfoBox .actions .actionItem {
+	float: left;
+	width: 47px;
+	height: 34px;
+	padding-top: 7px;
+	cursor: pointer;
+}
+
+#middle #playlists #playlists-content #playlist-items #playlist-items-content .playlistcontent .currentPlaylistInfoBox .actions .actionItem i {
+	padding: 14px;
+}
+
+#middle #playlists #playlists-content #playlist-items #playlist-items-content .playlistcontent .currentPlaylistInfoBox .actions .setAsActive {
+	float: left;
+    width: auto;
+    height: 34px;
+    padding-top: 4px;
+    cursor: pointer;
+}
+
+#middle #playlists #playlists-content #playlist-items #playlist-items-content .playlistcontent .currentPlaylistInfoBox .actions .setAsActive #setAsActiveCheckbox {
+	position: relative;
+	top: 4px;
+}
+
+/* HISTORY PAGE */
+
+#middle #history {
+	display: none;
+	background-color: #212121;
+	opacity: 0.95;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+    z-index: 2;
+	color: #FFFFFF;
+}
+
+#middle #history #history-content {
+	padding: 0px;
+}
+
+#middle #history #history-content .history-item {
+	height: 75px;
+	clear: both;
+}
+
+#middle #history #history-content .history-item .details .item-info .playedByTxt {
+	margin-left:15px;
+	color:rgb(215,41,79);
+}
+
+#middle #history #history-content .history-item .votes div {
+	float: left;
+	padding: 15px;
+}
+
+#middle #history #history-content .history-item .votes .number-votes {
+	position: relative;
+	top: -3px;
+	padding-left: 5px;
+	font-weight: 700;
+}
+
+#middle #history #history-content .history-item .votes .upvotes {
+	color: #90AD2F;
+}
+
+#middle #history #history-content .history-item .votes .grabs {
+	color: #A771FB;
+}
+
+#middle #history #history-content .history-item .votes .downvotes {
+	color: #C42E3B;
+}
+
+#middle #history #history-content .history-item .votes .add-to-playlist {
+	cursor: pointer;
+}
+
+/* VIDEO PLAYER */
+
+#middle #video-player {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	width: 710px;
+	height: 400px;
+	
+	-webkit-box-shadow: 0px 0px 7px 6px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 0px 7px 6px rgba(0,0,0,0.75);
+	box-shadow: 0px 0px 7px 6px rgba(0,0,0,0.75);
+}
+
+#middle #video-player #popup {
+	z-index: 10;
+	display: none;
+	width: 100%;
+	height: 100%;
+	background-color: #111111;
+	position: absolute;
+}
+
+#middle #video-player #popup .tab button.signlinks {
+	height: 63px;
+	width: 50%;
+	border-bottom: 3px solid #111111;
+    padding-bottom: 11px;
+}
+
+#middle #video-player #popup .popupcontent {
+	color: #FFFFFF;
+	height: calc(100% - 63px);
+}
+
+#middle #video-player #popup #signin #signin-content,
+#middle #video-player #popup #signup #signup-content {
+	height: 100%;
+	overflow-y: auto;
+}
+
+#app-right #usersettings #usersettings-content .item,
+#middle #video-player #popup #signin #signin-content .item,
+#middle #video-player #popup #signup #signup-content .item {
+	height: 40px;
+}
+
+#app-right #staff #staff-content #staffEditHome .item .item-name,
+#app-right #usersettings #usersettings-content .item .item-name,
+#middle #video-player #popup #signin #signin-content .item .item-name,
+#middle #video-player #popup #signup #signup-content .item .item-name {
+	padding: 12px;
+}
+
+#app-right #usersettings #usersettings-content .item .item-input,
+#middle #video-player #popup #signin #signin-content .item .item-input,
+#middle #video-player #popup #signup #signup-content .item .item-input {
+	height: 100%;
+	width: 100%;
+	background: none;
+	padding: 12px;
+	border: none;
+	color: #FFFFFF;
+	outline: 0;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+#app-right #login #login-content .item,
+#middle #video-player #popup #signin #signin-content .item,
+#middle #video-player #popup #signup #signup-content .item {
+	height: 40px;
+}
+
+#app-right #staff #staff-content #staffEditHome .item .item-name,
+#app-right #login #login-content .item .item-name,
+#middle #video-player #popup #signin #signin-content .item .item-name,
+#middle #video-player #popup #signup #signup-content .item .item-name {
+	padding: 12px;
+}
+
+#app-right #login #login-content .item .item-input,
+#middle #video-player #popup #signin #signin-content .item .item-input,
+#middle #video-player #popup #signup #signup-content .item .item-input {
+	height: 100%;
+	width: 100%;
+	background: none;
+	padding: 12px;
+	border: none;
+	color: #FFFFFF;
+	outline: 0;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+#app-right #register #register-content .item,
+#middle #video-player #popup #signin #signin-content .item,
+#middle #video-player #popup #signup #signup-content .item {
+	height: 40px;
+}
+
+#app-right #staff #staff-content #staffEditHome .item .item-name,
+#app-right #register #register-content .item .item-name,
+#middle #video-player #popup #signin #signin-content .item .item-name,
+#middle #video-player #popup #signup #signup-content .item .item-name {
+	padding: 12px;
+}
+
+#app-right #register #register-content .item .item-input,
+#middle #video-player #popup #signin #signin-content .item .item-input,
+#middle #video-player #popup #signup #signup-content .item .item-input {
+	height: 100%;
+	width: 100%;
+	background: none;
+	padding: 12px;
+	border: none;
+	color: #FFFFFF;
+	outline: 0;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+#middle #video-player #popup #signin #signin-content .item-button,
+#middle #video-player #popup #signup #signup-content .item-button {
+	background-color: rgba(215, 41, 79, 0.5);
+	cursor: pointer;
+	padding: 7px;
+}
+
+#middle #video-player #popup #signin #signin-content .item-button span,
+#middle #video-player #popup #signup #signup-content .item-button span {
+	position: relative;
+	top: -3px;
+	padding-left: 10px;
+}
+
+#middle #video-controls {
+	opacity: 0;
+    position: absolute;
+    width: 100%;
+    height: 40px;
+    z-index: 5;
+    top: 0;
+    vertical-align: middle;
+	color: #FFFFFF;
+    transition: all 0.5s ease;
+    background: linear-gradient(to bottom, rgba(10,10,10,1) 0%, rgba(10,10,10,0.75) 50%, rgba(10,10,10,0.50) 75%, rgba(10,10,10,0) 100%);
+}
+
+#middle #video-controls .right {
+	float: right;
+	padding: 2px 5px;
+}
+
+#middle #video-controls .right i {
+	float: left;
+	padding-left: 10px;
+	cursor: pointer;
+}
+
+#middle .progress {
+	width: 100%;
+    position: absolute;
+    bottom: -5px;
+    height: 6px;
+    background: #393e46;
+    text-align: left;
+}
+
+#middle .progress .progress-bar {
+	width: 30%;
+    background: #d7294f;
+    height: 100%;
+}
+
+/* BOTTOM BAR */
+
+#bottom-bar {
+	background: #1F1F1F;
+	color: #FFF;
+	height: 60px;
+}
+
+#bottom-bar .playlists-button {
+	width: 52px;
+    height: 45px;
+    padding: 11px 15px 0px 15px;
+    float: left;
+	cursor: pointer;
+}
+
+#bottom-bar .selected-song {
+	float: left;
+    font-size: 19px;
+	margin-top: 19px;
+    margin-left: -5px;
+}
+
+/* SIDE BAR */
+
+#app-right {
+	float: right;
+	width: 447px;
+	height: 100%;
+	background: #1F1F1F;
+	color: #FFF;
+	overflow: hidden;
+	border-left: 3px solid #111111;
+}
+
+#popup .tab,
+#app-right .tab {
+	overflow: hidden;
+	height: 63px;
+}
+
+#popup .tab button,
+#app-right .tab button {
+	background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px 11px 16px;
+	color: #FFF;
+	height: 63px;
+	width: 20%;
+	border-bottom: 3px solid #111111;
+   
+}
+
+#popup .tab button.active,
+#app-right .tab button.active {
+	color: #d7294f;
+    border-bottom: 3px solid #d7294f !important;
+	padding-bottom: 11px;
+}
+
+#popup .tab button span.badge,
+#app-right .tab button span.badge {
+	position: relative;
+    top: -4px;
+}
+
+#app-right .tab button img {
+	width: 25px;
+	height: 25px;
+	border-radius: 15px;
+	border: 2px solid #FFFFFF;
+}
+
+#app-right .tab button.active img {
+	border: 2px solid #d7294f !important;
+}
+
+#app-right .tabcontent {
+	display: none;
+	height: calc(100% - 126px);
+	width: 100%;
+    border-top: none;
+	border-bottom: 3px solid #111111;
+}
+
+/* CHAT */
+
+#app-right #chat #chat-content {
+	height: calc(100% - 42px);
+	overflow-y:auto;
+}
+
+#app-right #chat #chat-content .msg {
+	padding: 7px 0px;
+}
+
+#app-right #staff #staff-content .pagecontent .user .profilepic img,
+#app-right #waitlist #waitlist-content .queue-user .profilepic img,
+#app-right #userlist #userlist-content .user .profilepic img,
+#app-right #chat #chat-content .msg .header .profilepic img {
+	width: 25px;
+	height: 25px;
+	border-radius: 15px;
+	margin-left: 10px;
+	float: left;
+}
+
+#app-right #staff #staff-content .pagecontent .user .username,
+#app-right #waitlist #waitlist-content .queue-user .username, 
+#app-right #userlist #userlist-content .user .username,
+#app-right #chat #chat-content .msg .header .username {
+	float: left;
+	margin-left: 6px;
+	padding-top: 5px;
+	font-size: 15px;
+}
+
+#app-right #staff #staff-content .pagecontent .user .Owner,
+#app-right #waitlist #waitlist-content .queue-user .Owner,
+#app-right #userlist #userlist-content .user .Owner,
+#app-right #chat #chat-content .msg .header .Owner,.role-Owner {
+	color: #c20448;
+	font-weight: 700;
+}
+
+#app-right #staff #staff-content .pagecontent .user .Manager,
+#app-right #waitlist #waitlist-content .queue-user .Manager,
+#app-right #userlist #userlist-content .user .Manager,
+#app-right #chat #chat-content .msg .header .Manager,.role-Manager {
+	color: #7e3592;
+	font-weight: 700;
+}
+
+#app-right #staff #staff-content .pagecontent .user .Moderator,
+#app-right #waitlist #waitlist-content .queue-user .Moderator,
+#app-right #userlist #userlist-content .user .Moderator,
+#app-right #chat #chat-content .msg .header .Moderator,.role-Moderator {
+	color: #3180b3;
+	font-weight: 700;
+}
+
+#app-right #staff #staff-content .pagecontent .user .VIP,
+#app-right #waitlist #waitlist-content .queue-VIP .VIP,
+#app-right #userlist #userlist-content .user .VIP,
+#app-right #chat #chat-content .msg .header .VIP,.role-VIP {
+	color: #e3b63b;
+}
+
+#app-right #staff #staff-content .pagecontent .user .Normal,
+#app-right #waitlist #waitlist-content .queue-user .Normal,
+#app-right #userlist #userlist-content .user .Normal,
+#app-right #chat #chat-content .msg .header .Normal,.role-Normal {
+	color: #FFFFFF;
+}
+
+#app-right #chat #chat-content .msg .header .time {
+	float: right;
+	margin-right: 19px;
+	padding-top: 5px;
+	font-size: 12px;
+	color: #7b7b7b;
+	font-style: italic;
+}
+
+#app-right #chat #chat-content .msg .message p{
+	text-align: left;
+    padding-left: 41px;
+    font-size: 14px;
+    padding-right: 20px;
+    margin-top: -10px;
+    color: #7b7b7b;
+    clear: both;
+}
+
+#app-right #chat #chat-input {
+	height: 40px;
+    border-top: 2px solid #d7294f;
+}
+
+#app-right #chat #chat-input #chat-input-field {
+	height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.55);
+    padding-left: 11px;
+    border: none;
+    color: #FFFFFF;
+    outline: 0;
+}
+
+/* USERLIST */
+
+#app-right #userlist #userlist-content {
+	overflow-y:auto;
+	height: 100%;
+}
+
+#app-right #userlist #userlist-content .user {
+	padding-top: 3px;
+	height: 30px;
+}
+
+#app-right #userlist #userlist-content .user .rank {
+	float: right;
+	margin-right: 19px;
+	padding-top: 5px;
+	font-size: 12px;
+	color: #7b7b7b;
+	font-style: italic;
+}
+
+#app-right #userlist #userlist-content .user .guests {
+	float: left;
+	margin-left: 6px;
+	font-size: 15px;
+	padding-top: 5px;
+	font-style: italic;
+	color: #7b7b7b;
+}
+
+/* WAITLIST */
+
+#app-right #waitlist #waitlist-content {
+	overflow-y:auto;
+	height: 100%;
+}
+
+#app-right #waitlist #waitlist-content .queue-user {
+	padding-top: 3px;
+	height: 30px;
+}
+
+#app-right #waitlist #waitlist-content .queue-user .ranking {
+	float: left;
+	width: 15px;
+	margin-left: 7px;
+	font-size: 15px;
+	padding-top: 5px;
+	font-weight: 700;
+}
+
+#app-right #waitlist #waitlist-content .queue-user .actions {
+	float: right;
+}
+
+#app-right #waitlist #waitlist-content .queue-user .actions .muteUser,
+#app-right #waitlist #waitlist-content .queue-user .actions .removeUser {
+	float: left;
+	margin-right: 10px;
+	color: #7b7b7b;
+	cursor: pointer;
+}
+
+#app-right #waitlist #waitlist-content .queue-user .actions .moveUser {
+	float: left;
+	margin-right: 19px;
+	color: #7b7b7b;
+	cursor: pointer;
+}
+
+/* USER SETTINGS */
+#app-right #usersettings #usersettings-content {
+	overflow-y:auto;
+	height: 100%;
+}
+
+#app-right #usersettings #usersettings-content .item-user {
+	height: 62px;
+	border-bottom: 3px solid #d7294f;
+}
+
+#app-right #usersettings #usersettings-content .item-user .item-name img {
+	width: 62px;
+    height: 62px;
+    float: left;
+}
+
+#app-right #usersettings #usersettings-content .item-user .item-name .top-section {
+	float: left;
+	width: auto;
+	padding-left: 15px;
+	padding-top: 13px;
+}
+
+#app-right #usersettings #usersettings-content .item-user .item-name .top-section .logout {
+	font-size: 14px;
+	color: #7b7b7b;
+}
+
+#app-right #usersettings #usersettings-content .item-user .item-name .top-section .logout a {
+	text-decoration: none;
+	color:rgb(215,41,79);
+}
+
+#app-right #usersettings #usersettings-content .item-user .item-name .top-section .logout a i {
+	padding-right: 4px;
+	margin-left: -1px;
+}
+
+#app-right #staff #staff-content #staffEditHome .item-save-settings,
+#app-right #usersettings #usersettings-content .item-change-avatar {
+	background-color: rgba(215, 41, 79, 0.5);
+	cursor: pointer;
+	padding: 7px;
+}
+
+#app-right #staff #staff-content #staffEditHome .item-save-settings span,
+#app-right #usersettings #usersettings-content .item-change-avatar span {
+	position: relative;
+	top: -3px;
+	padding-left: 10px;
+}
+
+#app-right #usersettings #usersettings-content .divider {
+	border-top: 3px solid #FFFFFF;
+}
+
+#app-right #staff #staff-content #staffEditHome #staffEditHome-content .item .item-name label,
+#app-right #usersettings #usersettings-content .item .item-name label {
+	position: relative;
+	top: -3px;
+	padding-left: 10px;
+}
+
+/* LOGIN SETTINGS */
+#app-right #login #login-content {
+	overflow-y:auto;
+	height: 100%;
+}
+
+#app-right #login #login-content .item-user {
+	height: 62px;
+	border-bottom: 3px solid #d7294f;
+}
+
+#app-right #login #login-content .item-user .item-name img {
+	width: 62px;
+    height: 62px;
+    float: left;
+}
+
+#app-right #login #login-content .item-user .item-name .top-section {
+	float: left;
+	width: auto;
+	padding-left: 15px;
+	padding-top: 13px;
+}
+
+#app-right #login #login-content .item-user .item-name .top-section .logout {
+	font-size: 14px;
+	color: #7b7b7b;
+}
+
+#app-right #login #login-content .item-user .item-name .top-section .logout a {
+	text-decoration: none;
+	color:rgb(215,41,79);
+}
+
+#app-right #login #login-content .item-user .item-name .top-section .logout a i {
+	padding-right: 4px;
+	margin-left: -1px;
+}
+
+#app-right #staff #staff-content #staffEditHome .item-save-settings,
+#app-right #login #login-content .item-loginbutton {
+	background-color: rgba(215, 41, 79, 0.5);
+	cursor: pointer;
+	padding: 7px;
+	border: 0;
+    color: #FFF;
+    font-size: 16px;
+    width: 100%;
+    text-align: left;
+}
+
+#app-right #staff #staff-content #staffEditHome .item-save-settings span,
+#app-right #login #login-content .item-loginbutton button {
+	position: relative;
+	top: -3px;
+	padding-left: 10px;
+}
+
+#app-right #login #login-content .divider {
+	border-top: 3px solid #FFFFFF;
+}
+
+#app-right #staff #staff-content #staffEditHome #staffEditHome-content .item .item-name label,
+#app-right #login #login-content .item .item-name label {
+	position: relative;
+	top: -3px;
+	padding-left: 10px;
+}
+
+/* REG SETTINGS */
+#app-right #register #register-content {
+	overflow-y:auto;
+	height: 100%;
+}
+
+#app-right #register #register-content .item-user {
+	height: 62px;
+	border-bottom: 3px solid #d7294f;
+}
+
+#app-right #register #register-content .item-user .item-name img {
+	width: 62px;
+    height: 62px;
+    float: left;
+}
+
+#app-right #register #register-content .item-user .item-name .top-section {
+	float: left;
+	width: auto;
+	padding-left: 15px;
+	padding-top: 13px;
+}
+register
+#app-right #register #register-content .item-user .item-name .top-section .logout {
+	font-size: 14px;
+	color: #7b7b7b;
+}
+
+#app-right #register #register-content .item-user .item-name .top-section .logout a {
+	text-decoration: none;
+	color:rgb(215,41,79);
+}
+
+#app-right #register #register-content .item-user .item-name .top-section .logout a i {
+	padding-right: 4px;
+	margin-left: -1px;
+}
+
+#app-right #staff #staff-content #staffEditHome .item-save-settings,
+#app-right #register #register-content .item-loginbutton {
+	background-color: rgba(215, 41, 79, 0.5);
+	cursor: pointer;
+	padding: 7px;
+	border: 0;
+    color: #FFF;
+    font-size: 16px;
+    width: 100%;
+    text-align: left;
+}
+
+#app-right #staff #staff-content #staffEditHome .item-save-settings span,
+#app-right #register #register-content .item-loginbutton button {
+	position: relative;
+	top: -3px;
+	padding-left: 10px;
+}
+
+#app-right #register #register-content .divider {
+	border-top: 3px solid #FFFFFF;
+}
+
+#app-right #staff #staff-content #staffEditHome #staffEditHome-content .item .item-name label,
+#app-right #register #register-content .item .item-name label {
+	position: relative;
+	top: -3px;
+	padding-left: 10px;
+}
+
+/* STAFF MENU */
+#app-right #staff #staff-content {
+	overflow-y:auto;
+	height: 100%;
+}
+
+#app-right #staff #staff-content .pagelinks {
+	width: 25%;
+}
+
+#app-right #staff #staff-content .tab button span.badge {
+	left: 2px;
+}
+
+#app-right #staff #staff-content .pagecontent {
+	height: calc(100% - 63px);
+	border-bottom: 0;
+}
+
+#app-right #staff #staff-content .pagecontent #staffMutelist-content,
+#app-right #staff #staff-content .pagecontent #staffBanlist-content,
+#app-right #staff #staff-content .pagecontent #staffUserlist-content {
+	height: calc(100% - 40px);
+    overflow-y: auto;
+}
+
+#app-right #staff #staff-content .pagecontent .item {
+	height: 40px;
+}
+
+#app-right #staff #staff-content #staffUserlist .item .item-input,
+#app-right #staff #staff-content #staffBanlist .item .item-input,
+#app-right #staff #staff-content #staffMutelist .item .item-input {
+	height: 100%;
+    width: 100%;
+    background: none;
+    padding: 12px;
+    border: none;
+    color: #FFFFFF;
+    outline: 0;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border-bottom: 2px solid #d7294f;
+}
+
+#app-right #staff #staff-content .pagecontent #staffMutelist-content .user,
+#app-right #staff #staff-content .pagecontent #staffBanlist-content .user,
+#app-right #staff #staff-content .pagecontent #staffUserlist-content .user {
+	padding-top: 3px;
+	height: 30px;
+}
+
+#app-right #staff #staff-content .pagecontent #staffMutelist-content .user .actions,
+#app-right #staff #staff-content .pagecontent #staffBanlist-content .user .actions,
+#app-right #staff #staff-content .pagecontent #staffUserlist-content .user .actions {
+	float: right;
+}
+
+#app-right #staff #staff-content .pagecontent #staffMutelist-content .user .actions .rank,
+#app-right #staff #staff-content .pagecontent #staffBanlist-content .user .actions .rank,
+#app-right #staff #staff-content .pagecontent #staffUserlist-content .user .actions .rank {
+	float: left;
+	margin-right: 19px;
+	padding-top: 5px;
+	font-size: 12px;
+	color: #7b7b7b;
+	font-style: italic;
+}
+
+#app-right #staff #staff-content .pagecontent #staffMutelist-content .user .actions .removeMute,
+#app-right #staff #staff-content .pagecontent #staffBanlist-content .user .actions .removeBan,
+#app-right #staff #staff-content .pagecontent #staffUserlist-content .user .actions .editUser {
+	float: left;
+	margin-right: 10px;
+	color: #7b7b7b;
+	cursor: pointer;
+}
+
+#app-right #staff #staff-content .pagecontent #staffUserlist-content .user .actions .muteUser,
+#app-right #staff #staff-content .pagecontent #staffUserlist-content .user .actions .removeUser {
+	float: right;
+	cursor: pointer;
+}
+
+#app-right #staff #staff-content #staffEditHome #staffEditHome-content {
+	height: 100%;
+	overflow-y: auto;
+}
+
+#app-right #staff #staff-content #staffEditHome #staffEditHome-content .item .item-input {
+	height: 100%;
+    width: 100%;
+    background: none;
+    padding: 12px;
+    border: none;
+    color: #FFFFFF;
+    outline: 0;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+#app-right #staff #staff-content #staffEditHome #staffEditHome-content .item-textarea {
+	height: 250px;
+}
+
+#app-right #staff #staff-content #staffEditHome #staffEditHome-content .item-textarea .item-input {
+	height: 100%;
+    width: 100%;
+    background: none;
+    padding: 12px;
+    border: none;
+    color: #FFFFFF;
+    outline: 0;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+#app-right #staff #staff-content #staffEditHome #staffEditHome-content .item-textarea textarea {
+	font-family: Arial,Helvetica,sans-serif;
+	min-width: 437px;
+	max-width: 437px;
+	min-height: 250px;
+	max-height: 250px;
+}
+
+#app-right #vote-buttons {
+	overflow: hidden;
+	height: 60px;
+}
+
+/* TODO SIGN IN */
+
+#app-right #vote-buttons button {
+	background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 10px;
+    transition: 0.3s;
+	color: #FFF;
+	width: 25%;
+	height: 100%;
+}
+
+#app-right #vote-buttons button i {
+	text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+#app-right #vote-buttons button.upvote {
+	color: #90AD2F;
+	background-color: rgba(144, 173, 47, 0.4);
+}
+
+#app-right #vote-buttons button.upvote:hover,
+#app-right #vote-buttons button.upvote.active {
+	background-color: rgba(144, 173, 47, 0.6) !important;
+	color: #90AD2F !important;
+}
+
+#app-right #vote-buttons button.grab {
+	color: #A771FB;
+	background-color: rgba(170, 116, 255, 0.4);
+}
+
+#app-right #vote-buttons button.grab:hover,
+#app-right #vote-buttons button.grab.active {
+	background-color: rgba(167, 113, 251, 0.6) !important;
+	color: #A771FB !important;
+}
+
+#app-right #vote-buttons button.downvote {
+	color: #C42E3B;
+	background-color: rgba(196, 46, 59, 0.4);
+}
+
+#app-right #vote-buttons button.downvote:hover,
+#app-right #vote-buttons button.downvote.active {
+	background-color: rgba(196, 46, 59, 0.6) !important;
+	color: #C42E3B !important;
+}
+
+#app-right #vote-buttons button.joinqueue {
+	background-color: rgba(0, 162, 223, 0.4) !important;
+}
+
+#app-right #vote-buttons button.joinqueue:hover {
+	background-color: rgba(0, 162, 223, 0.6) !important;
+}
+
+#app-right #vote-buttons button.joinqueue.active {
+	background-color: rgba(241, 84, 51, 0.6) !important;
+}
+
+#app-right #vote-buttons #signin,
+#app-right #vote-buttons #signup {
+	width: 50%;
+	height: 100%;
+	font-size: 25px;
+	text-align: center;
+	cursor: pointer;
+	padding-top: 14px;
+	background: #d7294f;
+	background: -moz-linear-gradient(top,#d7294f 0,#8c001f 100%);
+	background: -webkit-gradient(linear,left top,left bottom,color-stop(0,#d7294f),color-stop(100%,#8c001f));
+	background: -webkit-linear-gradient(top,#d7294f 0,#8c001f 100%);
+	background: -o-linear-gradient(top,#d7294f 0,#8c001f 100%);
+	background: -ms-linear-gradient(top,#d7294f 0,#8c001f 100%);
+	background: linear-gradient(to bottom,#d7294f 0,#8c001f 100%);
+	-moz-box-shadow: inset 0 2px 0 -1px #0a0a0a;
+}
+
+/* RANDOM */
+.checkboxLabel {
+	cursor: pointer;
+}
+
+.checkboxItem {
+	padding: 7px !important;
+}
+
+[type="checkbox"]{
+	-webkit-appearance: none;
+	-moz-appearance: none;
+    appearance: none;
+	outline: 0;
+	cursor: pointer;
+}
+
+[type="checkbox"]:not(:checked):before {
+	color: #FFFFFF;
+	font: normal normal normal 24px/1 "Material Design Icons";
+	content: "\F131";
+}
+
+[type="checkbox"]:checked:before {
+	color: #FFFFFF;
+	font: normal normal normal 24px/1 "Material Design Icons";
+	content: "\F132";
+}
+/*
+input[type=range] {
+    -webkit-appearance: none;
+    border: none;
+    outline: none;
+    width: 75px;
+    background: transparent;
+    vertical-align: middle;
+    cursor: pointer;
+}*/
+
+/* stripes */
+#app-right #staff #staff-content #staffEditHome #staffEditHome-content .item-checkbox:nth-child(odd),
+.found-playlist-item:nth-child(odd),
+.history-item:nth-child(odd),
+.current-playlist-item:nth-child(odd),
+#userlist .user:nth-child(odd),
+#userlist-content .user:nth-child(odd),
+#chat-content .msg:nth-child(odd),
+#waitlist .queue-user:nth-child(odd),
+#usersettings-content .item:nth-child(odd),
+#login-content .item:nth-child(odd),
+#register-content .item:nth-child(odd),
+#signup-content .item:nth-child(even),
+#signin-content .item:nth-child(even),
+#staffEditHome .item:nth-child(odd),
+#playlist-lists .list:nth-child(even),
+#staffUserlist-content .user:nth-child(odd),
+#staffBanlist-content .user:nth-child(odd),
+#staffMutelist-content .user:nth-child(odd){
+	background-color: rgba(27, 27, 27, 0.6);
+}
+
+/*iframe {pointer-events: none;} */

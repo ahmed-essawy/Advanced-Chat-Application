@@ -1,0 +1,656 @@
+<section id="app">
+	<div id="top-bar">
+		<div class="logo menulinks" onclick="openMenu(event, 'room-info')">
+			<img src="/images/logo.png" />
+		</div>
+		<div class="current-song">
+			<div class="disc"><img src="/images/disc.png" alt="Logo" /></div>
+			<div class="song-info">
+				<div id="currentSong">FRENSHIP - Capsize (Ashton Love Remix)</div>
+				<div class="current-dj">Current DJ:
+					<font id="currentDj">RubyChan</font>
+				</div>
+			</div>
+		</div>
+		<div class="history-button menulinks" onclick="openMenu(event, 'history')">
+			<i class="mdi mdi-history" style="font-size: 30px;"></i>
+		</div>
+		<div class="skip-button" onclick="confirmSkip()">
+			<i class="mdi mdi-skip-next" style="font-size: 30px;"></i>
+		</div>
+		<div id="timeProgress">
+			03:13
+		</div>
+	</div>
+
+	<div id="middle">
+		<div id="room-info" class="maincontent">
+			<div id="room-info-content">
+				<img src="/images/logo.png" class="logo">
+				<p id="room-info-text">
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed dc eiusmcd tempor incididunt ut labore et dolore magna aliqua.
+					Ut enim ad minm veniam, quis nostrud exerciration ullamco lalcoris
+				</p>
+				<div id="social-links">
+					<a href="#" id="discord-button"><i class="mdi mdi-24px mdi-discord"></i><span class="social-button">Discord</span></a>
+					<a href="#" id="youtube-button"><i class="mdi mdi-24px mdi-youtube-play"></i><span class="social-button">YouTube</span></a>
+					<a href="#" id="facebook-button"><i class="mdi mdi-24px mdi-facebook"></i><span class="social-button">Facebook</span></a>
+					<a href="#" id="soundcloud-button"><i class="mdi mdi-24px mdi-soundcloud"></i><span class="social-button">Soundcloud</span></a>
+				</div>
+			</div>
+		</div>
+
+		<div id="playlists" class="maincontent">
+			<div id="playlists-content">
+				<aside id="playlist-lists">
+					<div id="create-playlist">
+						<input id="playlist-name-input" type="text" placeholder="Create a new playlist" maxlength="256">
+						<div id="create-playlist-button">
+							<i class="mdi mdi-24px mdi-playlist-plus" style="padding: 14px;"></i>
+						</div>
+					</div>
+
+					<div class="list playlistlinks active" onclick="openPlaylist(event, 'playlist1')">
+						<div class="playlistName">Nightcore #1</div>
+						<div class="amountItems">57</div>
+					</div>
+				</aside>
+				<section id="playlist-items">
+					<div id="playlist-items-content">
+						<div id="youtube-search">
+							<input id="youtube-search-input" type="text" placeholder="Search on YouTube" maxlength="256">
+							<div id="searchYouTubeButton" class="playlistlinks" onclick="openPlaylist(event, 'searchResult')">
+								<i class="mdi mdi-24px mdi-magnify" style="padding: 12px;"></i>
+							</div>
+						</div>
+						<div id="searchResult" class="playlistcontent">
+							<div class="currentPlaylistInfoBox">
+								<div class="currentPlaylistName">Searching results for "RubyChan Nightcore"</div>
+							</div>
+							<div id="searchResultFoundItems">
+								<div class="found-playlist-item">
+									<div class="thumbnail">
+										<img src="file:///E:/Users/robin/Documenten/Design/Delevery%201/MusicPlayerHTML/img/won-playlist-thumbnail.png">
+									</div>
+									<div class="details">
+										<div class="title">Song Title</div>
+										<div class="item-info">03:05</div>
+									</div>
+									<div class="actions">
+										<div class="add-to-playlist">
+											<i class="mdi mdi-24px mdi-plus-box-outline"></i>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div id="playlist1" class="playlist playlistcontent" style="display: block;">
+							<div class="currentPlaylistInfoBox">
+								<div class="currentPlaylistName">Nightcore #1</div>
+								<div class="actions">
+									<div class="setAsActive">
+										<label for="setAsActiveCheckbox" class="checkboxLabel">Set as active</span>
+												<input id="setAsActiveCheckbox" type="checkbox">
+											</div>
+											<div class="actionItem">
+												<i class="mdi mdi-24px mdi-shuffle"></i>
+											</div>
+											<div class="actionItem">
+												<i class="mdi mdi-24px mdi-pencil"></i>
+											</div>
+											<div class="actionItem">
+												<i class="mdi mdi-24px mdi-delete"></i>
+											</div>
+										</div>
+									</div>
+									<div class="currentPlaylistItemsBox">
+										<div class="current-playlist-item">
+											<div class="thumbnail">
+												<img src="file:///E:/Users/robin/Documenten/Design/Delevery%201/MusicPlayerHTML/img/won-playlist-thumbnail.png">
+											</div>
+											<div class="details">
+												<div class="title">Song Title</div>
+												<div class="item-info">03:05</div>
+											</div>
+											<div class="actions">							
+												<div class="add-to-playlist">
+													<i class="mdi mdi-24px mdi-plus-box-outline"></i>
+												</div>
+												<div class="rename-song">
+													<i class="mdi mdi-24px mdi-pencil"></i>
+												</div>
+												<div class="remove-from-playlist">
+													<i class="mdi mdi-24px mdi-delete"></i>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</section>
+					</div>
+				</div>
+				
+				<div id="history" class="maincontent">
+					<div id="history-content">
+						<div class="history-item">
+							<div class="thumbnail">
+								<img src="file:///E:/Users/robin/Documenten/Design/Delevery%201/MusicPlayerHTML/img/won-playlist-thumbnail.png" style="height:60px;" />
+							</div>
+							<div class="details">
+								<div class="title">Song Title</div>
+								<div class="item-info">3 minutes ago <font class="playedByTxt">Played By: </font>RubyChan</div>
+							</div>
+							<div class="votes">
+								<div class="upvotes"><i class="mdi mdi-24px mdi-thumb-up-outline"></i><span class="number-votes">2</span></div>
+								<div class="grabs"><i class="mdi mdi-24px mdi-star-outline"></i><span class="number-votes">2</span></div>
+								<div class="downvotes"><i class="mdi mdi-24px mdi-thumb-down-outline"></i><span class="number-votes">2</span></div>
+								<div class="add-to-playlist"><i class="mdi mdi-24px mdi-plus-box-outline"></i></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div id="video-player">
+					<div id="popup">
+						<div class="tab">
+							<button class="signlinks active" onclick="openPart(event, 'signup')">Register</button>
+							<button class="signlinks" onclick="openPart(event, 'signin')">Login</button>
+						</div>
+						
+						<div id="signup" class="popupcontent">
+							<div id="signup-content">
+								<div class="item">
+									<div class="item-name">Username</div>
+								</div>
+								<div class="item">
+									<input class="item-input" type="text" placeholder="Your fancy username" maxlength="256">
+								</div>
+								
+								<div class="item">
+									<div class="item-name">Email</div>
+								</div>
+								<div class="item">
+									<input class="item-input" type="text" placeholder="Your email adress" maxlength="256">
+								</div>
+								
+								<div class="item">
+									<div class="item-name">Password</div>
+								</div>
+								<div class="item">
+									<input class="item-input" type="text" placeholder="Your password" maxlength="256">
+								</div>
+								
+								<div class="item">
+									<div class="item-name">Password repeat</div>
+								</div>
+								<div class="item">
+									<input class="item-input" type="text" placeholder="Repeat your password" maxlength="256">
+								</div>
+								<div class="item-button">
+									<i class="mdi mdi-24px mdi-account-plus"></i>
+									<span>Sign up</span>
+								</div>
+							</div>
+						</div>
+						<div id="signin" class="popupcontent" style="display: none;">
+							<div id="signin-content">
+								<div class="item">
+									<div class="item-name">Username</div>
+								</div>
+								<div class="item">
+									<input class="item-input" type="text" placeholder="Your fancy username" maxlength="256">
+								</div>
+								
+								<div class="item">
+									<div class="item-name">Password</div>
+								</div>
+								<div class="item">
+									<input class="item-input" type="text" placeholder="Your password" maxlength="256">
+								</div>
+								
+								<div class="item-button">
+									<i class="mdi mdi-24px mdi-account-plus"></i>
+									<span>Sign in</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<iframe width="100%" height="100%" src="https://www.youtube.com/embed/qyC0yu-WDAU?autoplay=0&showinfo=0&controls=0" frameborder="0" onmouseover="showControls()" onmouseout="hideControls()"></iframe>
+					
+					<div id="video-controls" onmouseover="showControls()" onmouseout="hideControls()">
+						<div class="right">
+							
+							<!-- VOLUME ICONS:
+								mdi-volume-high
+								mdi-volume-medium
+								mdi-volume-low
+								mdi-volume-off
+							-->
+							<i class="mdi mdi-24px mdi-volume-high"></i>
+							<!-- FULL SCREEN ICONS:
+								mdi-fullscreen
+								mdi-fullscreen-exit
+							-->
+							<i class="mdi mdi-24px mdi-fullscreen"></i>
+						</div>
+						
+					</div>
+					<div class="progress">
+						<div class="progress-bar"></div>
+					</div>
+				</div>
+			</div>
+			
+			<div id="bottom-bar">
+				{{#if isAuthenticated}}
+				<div class="playlists-button menulinks" onclick="openMenu(event, 'playlists')" >
+					<i class="mdi mdi-36px mdi-format-list-bulleted"></i>
+				</div>
+				<div class="selected-song">
+					FRENSHIP - Capsize (Ashton Love Remix)
+				</div>
+				{{/if}}
+			</div>
+		</section>
+		
+		<aside id="app-right">
+			<div class="tab">
+				<button class="tablinks" onclick="openTab(event, 'chat')" id="defaultOpen"><i class="mdi mdi-24px mdi-message"></i></button>
+				<button class="tablinks" onclick="openTab(event, 'userlist')"><i class="mdi mdi-24px mdi-account-multiple"></i> <span class="badge" id="onlineCount1">{{onlineUsers.length}}</span></button>
+				<button class="tablinks" onclick="openTab(event, 'waitlist')"><i class="mdi mdi-24px mdi-playlist-play"></i> <span class="badge"><span id="onlineCount2">{{onlineUsers.length}}</span>/<span id="usersCount">{{usersList.length}}</span></span></button>
+				{{#unless isAuthenticated}}
+				<button class="tablinks" onclick="openTab(event, 'login')"><i class="mdi mdi-24px mdi-login-variant"></i></button>
+				<button class="tablinks" onclick="openTab(event, 'register')"><i class="mdi mdi-24px mdi-account-plus"></i></button>
+				{{/unless}}
+				{{#if isAuthenticated}}
+				<button class="tablinks" onclick="openTab(event, 'usersettings')"><img src="{{user.picture}}" alt="Avatar"></button>
+				{{/if}}
+				{{#unlessEqual user.role "Normal"}}{{#unlessEqual user.role "VIP"}}
+				<button class="tablinks" onclick="openTab(event, 'staff')"><i class="mdi mdi-24px mdi-security"></i></button>
+				{{/unlessEqual}}{{/unlessEqual}}
+			</div>
+
+			<div id="chat" class="tabcontent">
+				<div id="chat-content"></div>
+
+				{{#if isAuthenticated}}
+				<div id="chat-input">
+					<input id="chat-input-field" type="text" placeholder="Type your message..." maxlength="256" onkeypress="">
+				</div>
+				{{/if}}
+			</div>
+
+			<div id="userlist" class="tabcontent">
+				<div id="userlist-content">
+					{{#each onlineUsers as |value key|}}
+					<div class="user" id="onlineUser-{{value._id}}">
+						<div class="profilepic"><img src="{{value.picture}}" alt=""></div>
+						<div class="username {{value.role}}">{{value.username}}</div>
+						<div class="rank">{{value.role}}</div>
+					</div>
+					{{/each}}
+					<!-- Amount of guests (not logged in visitors) -->
+					{{!-- <div class="user">
+						<div class="username guests" style="">And 13 guests</div>
+					</div> --}}
+				</div>
+			</div>
+
+			<div id="waitlist" class="tabcontent">
+				<div id="waitlist-content">
+					{{#each usersList as |value key|}}
+					<div class="queue-user" id="usersList-{{value._id}}">
+						{{!-- <div class="ranking">{{key}}.</div> --}}
+						<div class="profilepic"><img src="{{value.picture}}" alt=""></div>
+						<div class="username {{value.role}}">{{value.username}}</div>
+						<div class="actions">
+							<div class="moveUser"><i class="mdi mdi-24px mdi-drag"></i></div>
+						</div>
+					</div>
+					{{/each}}
+				</div>
+			</div>
+
+			<div id="userlist" class="tabcontent">
+				<div id="userlist-content">
+				
+					<div class="user">
+						<div class="profilepic"><img src="/images/profipic.png" alt=""></div>
+						<div class="username owner">User 1</div>
+						<div class="rank">Owner</div>
+					</div>
+					
+					<!-- Amount of guests (not logged in visitors) -->
+					<div class="user">
+						<div class="username guests" style="">And 13 guests</div>
+					</div>
+				</div>
+			</div>
+			
+			<div id="login" class="tabcontent">
+				<div id="login-content">
+					<form action="/login" method="post" class="form-register">
+						<div class="item">
+							<div class="item-name">Username</div>
+						</div>
+						<div class="item">
+							<input class="item-input" type="text" name="username" id="username" required="required" placeholder="Type your message..." maxlength="256">
+						</div>
+						<div class="item">
+							<div class="item-name">Password</div>
+						</div>
+						<div class="item">
+							<input class="item-input" type="password" name="password" id="password" required="required" placeholder="Type your message..." maxlength="256">
+						</div>
+						<button type="submit" class="item-loginbutton">
+							<i class="mdi mdi-24px mdi-login"></i>
+							<span>Login</span>
+						</button>
+                    </form>
+				</div>
+			</div>
+			
+			<div id="register" class="tabcontent">
+				<div id="register-content">
+					<form action="/register" method="post" class="form-register">
+						<div class="item">
+							<div class="item-name">Username</div>
+						</div>
+						<div class="item">
+							<input class="item-input" type="text" name="username" id="reg_username" required="required" placeholder="Type your message..." maxlength="256">
+						</div>
+						<div class="item">
+							<div class="item-name">Email</div>
+						</div>
+						<div class="item">
+							<input class="item-input" type="email" name="email" id="reg_email" required="required" placeholder="Type your message..." maxlength="256">
+						</div>
+						<div class="item">
+							<div class="item-name">New password</div>
+						</div>
+						<div class="item">
+							<input class="item-input" type="password" name="password1" id="password1" required="required" placeholder="Type your message..." maxlength="256">
+						</div>
+						<div class="item">
+							<div class="item-name">Repeat password</div>
+						</div>
+						<div class="item">
+							<input class="item-input" type="password" name="password2" id="password2" required="required" placeholder="Type your message..." maxlength="256">
+						</div>
+						<button type="submit" class="item-loginbutton">
+							<i class="mdi mdi-24px mdi-login"></i>
+							<span>Register</span>
+						</button>
+                    </form>
+				</div>
+			</div>
+			
+			<div id="usersettings" class="tabcontent">
+				<div id="usersettings-content">
+					<div class="item-user">
+						<div class="item-name">
+							<img src="{{user.picture}}">
+							<div class="top-section">
+								<div class="username">{{user.username}}</div>
+								<div class="logout">
+									<a href="/logout"><i class="mdi mdi-logout-variant"></i>logout</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="item-change-avatar">
+						<i class="mdi mdi-24px mdi-upload"></i>
+						<span>Change avatar</span>
+					</div>
+					<div class="item">
+						<div class="item-name">Username</div>
+					</div>
+					<div class="item">
+						<input class="item-input" type="text" placeholder="Type your message..." value="{{user.username}}" maxlength="256">
+					</div>
+					<div class="item">
+						<div class="item-name">Old password</div>
+					</div>
+					<div class="item">
+						<input class="item-input" type="text" placeholder="Type your message..." maxlength="256">
+					</div>
+					<div class="item">
+						<div class="item-name">New password</div>
+					</div>
+					<div class="item">
+						<input class="item-input" type="text" placeholder="Type your message..." maxlength="256">
+					</div>
+					<div class="item">
+						<div class="item-name">Repeat password</div>
+					</div>
+					<div class="item">
+						<input class="item-input" type="text" placeholder="Type your message..." maxlength="256">
+					</div>
+					<div class="item-change-avatar">
+						<i class="mdi mdi-24px mdi-content-save"></i>
+						<span>Save</span>
+					</div>
+					
+					<div class="divider"></div>
+					
+					<div class="item">
+						<div class="item-name checkboxItem">
+							<input type="checkbox" id="chatImagesSetting" />
+							<label for="chatImagesSetting">Chat images</label>
+									</div>
+								</div>
+								<div class="item">
+									<div class="item-name checkboxItem">
+										<input type="checkbox" id="mentionSoundSetting" checked />
+										<label for="mentionSoundSetting">Mention sound</label>
+									</div>
+								</div>
+								<div class="item">
+									<div class="item-name checkboxItem">
+										<input type="checkbox" id="boothAlertSetting" checked />
+										<label for="boothAlertSetting">Booth alert</label>
+									</div>
+								</div>
+								<div class="item">
+									<div class="item-name checkboxItem">
+										<input type="checkbox" id="playVideoAudioSetting" checked />
+										<label for="playVideoAudioSetting">Play audio/video</label>
+									</div>
+								</div>
+								<div class="item">
+									<div class="item-name checkboxItem">
+										<input type="checkbox" id="userJoinSetting" checked />
+										<label for="userJoinSetting">User join</label>
+									</div>
+								</div>
+								<div class="item">
+									<div class="item-name checkboxItem">
+										<input type="checkbox" id="userLeaveSetting" checked />
+										<label for="userLeaveSetting">User leave</label>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div id="staff" class="tabcontent">
+							<div id="staff-content">
+								<div class="tab">
+									<button class="pagelinks active" onclick="openPage(event, 'staffUserlist')"><i class="mdi mdi-24px mdi-account-multiple"></i><span id="staffUserCount" class="badge">{{usersList.length}}</span></button>
+									<button class="pagelinks" onclick="openPage(event, 'staffBanlist')"><i class="mdi mdi-24px mdi-account-remove"></i><span id="bannedCount" class="badge">0</span></button>
+									<button class="pagelinks" onclick="openPage(event, 'staffMutelist')"><i class="mdi mdi-24px mdi-volume-mute"></i><span id="mutedCount" class="badge">0</span></button>
+									<button class="pagelinks" onclick="openPage(event, 'staffEditHome')"><i class="mdi mdi-24px mdi-home"></i></button>
+								</div>
+								<div id="staffUserlist" class="pagecontent" style="display: block;">
+									<div class="item">
+										<input class="item-input" type="text" placeholder="Type to filter..." maxlength="256">
+									</div>
+									
+									<div id="staffUserlist-content">
+										{{#each usersList as |value key|}}
+										{{#unless value.isBlocked}}{{#unless value.isMuted}}
+										<div class="user" id="staffUser-{{value._id}}">
+											<div class="profilepic">
+												<img src="{{value.picture}}" alt="">
+											</div>
+											<div class="username {{value.role}}">{{value.username}}</div>
+											<div class="actions">
+												<div class="rank">{{value.role}}</div>
+												{{#unlessEqualOr ../user.role "Normal" "VIP"}}{{#unlessEqual value.role "Owner"}}
+												{{#unlessIncludes ../user.role "Moderator" value.role "VIP,Normal"}}{{#unlessIncludes ../user.role "Manager" value.role "Moderator,VIP,Normal"}}
+												<div class="editUser" onclick="editStaffRole(this)"><i class="mdi mdi-24px mdi-pencil"></i></div>
+												{{#ifEqualOr value.role "Normal" "VIP"}}
+												{{#unlessEqual ../user.role "Moderator"}}
+												<div class="removeUser" onclick="banUser(this, '{{value._id}}', 'IP', true)" title="Ban IP"><i class="mdi mdi-24px mdi-close"></i></div>
+												{{/unlessEqual}}
+												<div class="removeUser" onclick="banUser(this, { id: '{{value._id}}', username:'{{value.username}}', picture:'{{value.picture}}', role:'{{value.role}}' }, 'User', true)" title="Ban User"><i class="mdi mdi-24px mdi-close"></i></div>
+												<div class="muteUser" onclick="muteUser(this, { id: '{{value._id}}', username:'{{value.username}}', picture:'{{value.picture}}', role:'{{value.role}}' }, true)"><i class="mdi mdi-24px mdi-volume-off"></i></div>
+												{{/ifEqualOr}}
+												{{/unlessIncludes}}{{/unlessIncludes}}
+												{{/unlessEqual}}{{/unlessEqualOr}}
+											</div>
+											<div id="staffUserRole" style="display: none; float: right">
+												<select onchange="changeStaffRole(this, '{{value._id}}')">
+													{{#ifEqual ../user.role "Owner"}}{{#each ../userRolesOfOwner}}
+													<option value="{{this}}" {{#ifEqual this value.role}}selected{{/ifEqual}}>{{this}}</option>
+													{{/each}}{{/ifEqual}}
+													{{#ifEqual ../user.role "Manager"}}{{#each ../userRolesOfManager}}
+													<option value="{{this}}" {{#ifEqual this value.role}}selected{{/ifEqual}}>{{this}}</option>
+													{{/each}}{{/ifEqual}}
+													{{#ifEqual ../user.role "Moderator"}}{{#each ../userRolesOfModerator}}
+													<option value="{{this}}" {{#ifEqual this value.role}}selected{{/ifEqual}}>{{this}}</option>
+													{{/each}}{{/ifEqual}}
+												</select>
+												<i class="mdi mdi-24px mdi-close" title="Cancel" onclick="cancelChangeStaffRole(this)"></i>
+											</div>
+										</div>
+										{{/unless}}{{/unless}}
+										{{/each}}
+									</div>
+								</div>
+
+								<div id="staffBanlist" class="pagecontent" style="display: none;">
+									<div class="item">
+										<input class="item-input" type="text" placeholder="Type to filter..." maxlength="256">
+									</div>
+
+									<div id="staffBanlist-content">
+										{{#each usersList as |value key|}}
+										{{#if value.isBlocked}}
+										<script>$("#bannedCount").text(parseInt($("#bannedCount").text()) + 1);</script>
+										<div class="user" id="bannedUser-{{value._id}}">
+											<div class="profilepic">
+												<img src="{{value.picture}}" alt="">
+											</div>
+											<div class="username {{value.role}}">{{value.username}}</div>
+											<div class="actions">
+												<div class="rank">{{value.role}}</div>
+												<div class="removeBan" onclick="banUser(this, { id: '{{value._id}}' }, 'User', false)"><i class="mdi mdi-24px mdi-close"></i></div>
+											</div>
+										</div>
+										{{/if}}
+										{{/each}}
+									</div>
+								</div>
+
+								<div id="staffMutelist" class="pagecontent" style="display: none;">
+									<div class="item">
+										<input class="item-input" type="text" placeholder="Type to filter..." maxlength="256">
+									</div>
+
+									<div id="staffMutelist-content">
+										{{#each usersList as |value key|}}
+										{{#if value.isMuted}}
+										<script>$("#mutedCount").text(parseInt($("#mutedCount").text()) + 1);</script>
+										<div class="user" id="mutedUser-{{value._id}}">
+											<div class="profilepic">
+												<img src="{{value.picture}}" alt="">
+											</div>
+											<div class="username {{value.role}}">{{value.username}}</div>
+											<div class="actions">
+												<div class="rank">{{value.role}}</div>
+												<div class="removeMute" onclick="muteUser(this, { id: '{{value._id}}' }, false)"><i class="mdi mdi-24px mdi-volume-mute"></i></div>
+											</div>
+										</div>
+										{{/if}}
+										{{/each}}
+									</div>
+								</div>
+
+								<div id="staffEditHome" class="pagecontent" style="display: none;">
+									<div id="staffEditHome-content">
+										<div class="item">
+											<div class="item-name checkboxItem">
+												<input type="checkbox" id="staffLockQueue" />
+												<label for="staffLockQueue">Lock queue</label>
+											</div>
+										</div>
+										<div class="item">
+											<div class="item-name checkboxItem">
+												<input type="checkbox" id="staffToggleCycle" />
+												<label for="staffToggleCycle">Toggle cycle</label>
+											</div>
+										</div>
+										<div class="item">
+											<div class="item-name">Discord URL</div>
+										</div>
+										<div class="item">
+											<input class="item-input" type="text" placeholder="Type your message...">
+										</div>
+
+										<div class="item">
+											<div class="item-name">YouTube URL</div>
+										</div>
+										<div class="item">
+											<input class="item-input" type="text" placeholder="Type your message...">
+										</div>
+
+										<div class="item">
+											<div class="item-name">Facebook URL</div>
+										</div>
+										<div class="item">
+											<input class="item-input" type="text" placeholder="Type your message...">
+										</div>
+
+										<div class="item">
+											<div class="item-name">Soundcloud URL</div>
+										</div>
+										<div class="item">
+											<input class="item-input" type="text" placeholder="Type your message...">
+										</div>
+
+										<div class="item">
+											<div class="item-name">Room info text</div>
+										</div>
+										<div class="item-textarea">
+											<textarea class="item-input" placeholder="Type your message..."></textarea>
+										</div>
+										<div class="item-save-settings">
+											<i class="mdi mdi-24px mdi-content-save"></i>
+											<span>Save</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div id="vote-buttons">
+							{{#unless isAuthenticated}}
+							<button id="signin" class="sign-in" onclick="openTab(event, 'login')"><i class="mdi mdi-24px mdi-login-variant"></i> Sign in to play!</button>
+							<button id="signup" class="sign-up" onclick="openTab(event, 'register')"><i class="mdi mdi-24px mdi-account-plus"></i> or Sign up</button>
+							{{/unless}}
+							{{#if isAuthenticated}}
+							<button id="upvote" class="votelinks upvote" onclick="voteButton(event, 'upvote')"><i class="mdi mdi-24px mdi-thumb-up-outline"></i> 2</button>
+							<button id="grab" class="votelinks grab" onclick="voteButton(event, 'grab')"><i class="mdi mdi-24px mdi-star-outline"></i> 5</button>
+							<button id="downvote" class="votelinks downvote" onclick="voteButton(event, 'downvote')"><i class="mdi mdi-24px mdi-thumb-down-outline"></i> 2</button>
+							<button id="joinqueue" class="votelinks joinqueue" onclick="voteButton(event, 'joinqueue')"><i class="mdi mdi-24px mdi-playlist-plus"></i></button>
+							{{/if}}
+						</div>
+						</aside>
+
+						<script src="/socket.io/socket.io.js"></script>
+						<script src="/js/main.js"></script>
+						<script src="/js/jquery.mentiony.min.js"></script>
+						<script src="/js/socket.js"></script>
+						</body>

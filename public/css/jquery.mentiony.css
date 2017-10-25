@@ -1,0 +1,49 @@
+/* Bootstrap3 is required for default styling */
+
+.mentiony-container [contenteditable=true]:empty:not(:focus):before{
+	content:attr(data-placeholder);
+	color:#999999;
+}
+
+.mentiony-container{ position:relative;height:auto; border:1px solid #cecece;
+	/* NOTE: All top-right-bottom-left must be equal */
+	padding:10px;
+}
+.mentiony-container .pl0{ padding-left:0;}
+.mentiony-container .mention-input-hidden{float:left; display:inline-block; visibility:hidden; width:0!important;height:0!important; margin:0!important; padding:0!important;opacity:0!important;}
+
+.mentiony-container .mentiony-popover{
+	position:absolute;
+	z-index:1000;
+	left:0; /* Default */
+	width:280px;
+	height:auto;
+	max-height:400px;
+	display:none;
+	border:1px solid #eee;
+	border-radius:4px;
+	padding:0;
+	background:#fefefe;
+	overflow: auto;
+	bottom: 60px;
+}
+
+.mentiony-container .mentiony-content {
+	outline: none;
+}
+
+.mentiony-list{list-style:none; width: 100%; padding:0;margin: 0;background-color: #1F1F1F}
+.mentiony-item{padding: 5px 10px; cursor:pointer; overflow: hidden;}
+.mentiony-item:first-child{border:none}
+.mentiony-item:hover{ background:#000000;}
+.mentiony-item.active{ background:#ddd;}
+.mentiony-item img{ width:30px; border-radius: 50% }
+
+.mentiony-item .title, .mentiony-item .help-block{ margin:0;}
+.mentiony-item .title{font-size: 14px;}
+.mentiony-item .help-block{font-size: 13px;margin-top: 3px;}
+.mention-area .highlight span.mentiony-link{background:#d7294f; padding: 1px 4px; border-radius: 3px;}
+.chat-highlight{background:#d7294f;color: #FFF; padding: 1px 4px; border-radius: 3px;}
+.mentiony-content{min-height: 20px !important}
+[id^='mentiony-content-'] div:not(:last-child) {display: none;}
+[id^='mentiony-content-'] > span:first-child {background-color: unset !important;}

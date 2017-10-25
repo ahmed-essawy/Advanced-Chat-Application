@@ -1,0 +1,38 @@
+{
+  "name": "advancedchatapplication",
+  "version": "1.0.0",
+  "description": "Advanced Chat Application",
+  "main": "server.js",
+  "author": {
+    "name": "Ahmed Essawy",
+    "email": "ahm.elessawy@gmail.com",
+    "url": "http://www.ahm.elessawy.com"
+  },
+  "repository": {
+    "url": "git+https://github.com/ahmelessawy/AdvancedChatApplication.git",
+    "type": "git"
+  },
+  "bugs": {
+    "url": "https://github.com/OmarElGabry/AdvancedChatApplication/issues"
+  },
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.18.2",
+    "connect-flash": "^0.1.1",
+    "connect-mongo": "^2.0.0",
+    "cors": "^2.8.4",
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "express-handlebars": "^3.0.0",
+    "express-session": "^1.15.6",
+    "formidable": "^1.1.1",
+    "fs": "0.0.1-security",
+    "mongoose": "^4.12.3",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "redis": "^2.8.0",
+    "request-ip": "^2.0.2",
+    "socket.io": "^2.0.3",
+    "socket.io-redis": "^5.2.0"
+  }
+}
