@@ -2,9 +2,9 @@
 	"db": {
 		"username": "essawy",
 		"password": "essawy",
-		"host": "ds040637.mlab.com",
-		"port": "40637",
-		"name": "l3ijtkwijt-test"
+		"host": "ds042417.mlab.com",
+		"port": "42417",
+		"name": "advancedchatapplication"
 	},
 	"sessionSecret": "Ahmed Essawy <ahm.elessawy@gmail.com>",
 	"redis": {
