@@ -1,5 +1,5 @@
 {
-  "name": "advancedchatapplication",
+  "name": "advanced-chat-application",
   "version": "1.0.0",
   "description": "Advanced Chat Application",
   "main": "server.js",
@@ -9,11 +9,11 @@
     "url": "http://www.ahm.elessawy.com"
   },
   "repository": {
-    "url": "git+https://github.com/ahmelessawy/AdvancedChatApplication.git",
+    "url": "git+https://github.com/ahmelessawy/Advanced-Chat-Application.git",
     "type": "git"
   },
   "bugs": {
-    "url": "https://github.com/OmarElGabry/AdvancedChatApplication/issues"
+    "url": "https://github.com/ahmelessawy/Advanced-Chat-Application/issues"
   },
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
